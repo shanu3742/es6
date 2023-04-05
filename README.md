@@ -11,7 +11,111 @@
 - callback function
 - class
 
->**callback**
+## arrow function
+> **arrow function** 
+
+>**before understing arrow function let's recall the some use of let and const over var**
+```javascript
+console.log(a)//undefined
+var a=12;
+```
+```javascript
+//console.log(b) //refrence error 
+
+let b=2;
+```
+
+>same  way if we use normal function 
+```javascript
+console.log(sum(3,4))
+function sum(a,b){
+return a+b
+}
+
+/**  here we are getting sum of two number just before function call ,
+*it's because of javascript hoistng all initialization on same scope move at top that way
+*we are getting answer but it's not famillier with new coder or your code base is getting larger 
+*it's not redable to so we want some kind of let and const behaviour 
+*with function that means after  initializing a fnction then only you call it so for that 
+*we use arrow function or anyymous  and this is the first reqirement 
+**/
+
+````
+> **before understanding arrow function let's write syntax for anyyomus function that we allready discuss in plain javascript concept**
+
+```javascript
+let  add = function (a,b){
+return a+b
+}
+console.log(add(1,2))
+```
+
+
+
+> **now let's see arrow function**
+```javascript
+let  add =  (a,b) => {
+return a+b
+}
+console.log(add(1,2))
+
+//we remove function from left of () and add  => to the  right of ()
+//you can say arraow function is anyynomus function because syntax wise and some of behaviour 
+//is common in both , like you are not allow to call function before initiallization in both function 
+// important point  we are not allow to create class using arrow function just like normal function , so you are not allow to use new keyWord before function call
+//because new keyword is used to construct  a new object
+```
+
+
+> **now if youre function  are two small you can just create function in one line**
+```javascript
+let add = (a,b) => a+b
+//that's all you wrote one function to add two number,no need of write **return** 
+```
+>**let's understand major difference**
+```javascript
+function callSome(){
+     i=1000;
+    const obj = {
+        i: 10,
+        b: () => console.log(this.i), //function b is arrow function and we know arrow function don't have it's own this  that's way it take it's parent properties 
+        c() {
+          console.log(this.i); //it's normal function and normal function have this and also have one proerty i that's why it take it
+        },
+
+      };
+      
+      obj.b(); // logs undefined, Window { /* … */ } (or the global object)
+      obj.c();
+}
+callSome()
+
+```
+
+```javascript
+ i=1000;
+function callSome(){
+    
+    const obj = {
+        i: 10,
+        b: () => console.log(this.i), //function b is arrow function and we know arrow function don't have it's own this  that's way it take it's parent properties 
+        c() {
+          console.log(this.i); //it's normal function and normal function have this and also have one proerty i that's why it take it
+        },
+
+      };
+      
+      obj.b(); // logs undefined, Window { /* … */ } (or the global object)
+      obj.c();
+}
+callSome()
+
+```
+
+## callback
+
+>**callback**  
+
 **if we pass a function as argument to another function it's called as callback function**
 *example-1*
 ```javascript
