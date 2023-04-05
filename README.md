@@ -10,6 +10,7 @@
 - Destracturing
 - callback function
 - class
+- module
 
 ## arrow function
 > **arrow function** 
