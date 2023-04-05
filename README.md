@@ -38,6 +38,12 @@ console.log(absArray([2,-1,7,-3],positiveNumber))
 *sum(3,4)//here 3,4 is function argument
 * function argument may be number,string,boolean,null,undefined ,variable function ,object,array, it's depends on requirement
 **/
+
+/**
+*what is function parameter
+ * function sum(parameter1,parameter2){}
+ *parameter1 and parameter2 is function parameter
+**/
 ```
 > **another way to do same**
 
