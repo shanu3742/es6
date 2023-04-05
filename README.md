@@ -9,6 +9,7 @@
 - rest and spread 
 - Destracturing
 - callback function
+- class
 
 >**array method**
 - map
