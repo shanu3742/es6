@@ -61,6 +61,21 @@ console.log(absArray([2,-1,7,-3],(x) => x>0?true:false))
 *it's smae as map ,filter and other array method 
 **/
 ```
+> after having good knowledge on callback let's create our own map method like how array.map work
+
+```javascript
+function  myOwnMapArrayMethod(array,callback) {
+  let positive=[]
+  for(let i=0;i<array.length;i++){
+    
+      positive.push(callback(array[i]))
+
+}
+  return positive
+}
+
+console.log(myOwnMapArrayMethod([2,-1,7,-3],(el) => el*2))
+```
 
 >**array method**
 - map
