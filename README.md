@@ -6,6 +6,7 @@
 - Template Literals
 - Default parameter(function)
 - Arrow function
+- eval()
 - rest and spread 
 - Destracturing
 - callback function
