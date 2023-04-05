@@ -11,6 +11,57 @@
 - callback function
 - class
 
+>**callback**
+**if we pass a function as argument to another function it's called as callback function**
+*example-1*
+```javascript
+function positiveNumber(x) {
+return x>0?true:false
+}
+function  absArray(array,callback) {
+  let positive=[]
+  for(let i=0;i<array.length;i++){
+    if(callback(array[i])){
+      positive.push(array[i])
+}
+}
+  return positive
+}
+
+console.log(absArray([2,-1,7,-3],positiveNumber))
+/**here positiveNumber function is passed as argument to absArray function
+*and the role is positiveNumber function is return true or false,
+*if a number is positive it return true else false
+**/
+
+/**if you don't know about function argument if you pass some value on function call that value call as function argument
+*sum(3,4)//here 3,4 is function argument
+* function argument may be number,string,boolean,null,undefined ,variable function ,object,array, it's depends on requirement
+**/
+```
+> **another way to do same**
+
+```javascript
+function  absArray(array,callback) {
+  let positive=[]
+  for(let i=0;i<array.length;i++){
+    if(callback(array[i])){
+      positive.push(array[i])
+}
+}
+  return positive
+}
+
+console.log(absArray([2,-1,7,-3],(x) => x>0?true:false))
+
+/**
+*here we directly pass function in argument ,you can create function in argument ,
+*however it's better to avoid it but if your function is to small then you can do it ,like how i did above 
+*i just created an anyynomus function and perform my require operation and return  true or false based on condition
+*it's smae as map ,filter and other array method 
+**/
+```
+
 >**array method**
 - map
 - filter
