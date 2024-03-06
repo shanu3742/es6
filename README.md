@@ -10,6 +10,7 @@
 - rest and spread 
 - Destracturing
 - callback function
+- callback hell
 - class
 - module
 
@@ -187,6 +188,68 @@ function  myOwnMapArrayMethod(array,callback) {
 }
 
 console.log(myOwnMapArrayMethod([2,-1,7,-3],(el) => el*2))
+```
+>**callback hell**
+
+```javascript
+/**
+*basic example
+**/
+function doStep1(init) {
+  return init + 1;
+}
+
+function doStep2(init) {
+  return init + 2;
+}
+
+function doStep3(init) {
+  return init + 3;
+}
+
+function doOperation() {
+  let result = 0;
+  result = doStep1(result);
+  result = doStep2(result);
+  result = doStep3(result);
+  console.log(`result: ${result}`);
+}
+
+doOperation();
+
+
+/**
+*advance example
+**/
+
+const getSquare = (x, callback) => {
+    
+    let result = x*x;
+    callback(x,result);
+}
+const getSub = (ox,x,callback) => {
+    let result = x-ox;
+    callback(ox,result);
+}
+const getHalf= (ox,x,callback) => {
+    let result = (x/2)-(ox/2);
+    callback(ox,result);
+}
+
+
+const getMath = (value) => {
+    getSquare(value,(o,r) => {
+        getSub(o,r,(o,r) => {
+            getHalf(o,r,(o,r) => {
+                 
+                console.log(`result:${r}-original:${o}`)
+
+            })
+        })
+    })
+} 
+
+getMath(10)
 ```
 
 >**array method**
